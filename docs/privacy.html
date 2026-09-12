@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy — NumeriOnesti</title>
+<meta name="description" content="Informativa privacy.">
+<style>
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --card:#ffffff; --ink:#0b0b0b; --ink-2:#52514e;
+  --muted:#898781; --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+  --blue:#2a78d6; --red:#e34948; --green:#0ca30c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --card:#232322; --ink:#fff; --ink-2:#c3c2b7;
+    --muted:#898781; --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+    --blue:#3987e5; --red:#e66767; --green:#0ca30c;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 60px}
+nav{border-bottom:1px solid var(--grid);margin-bottom:8px}
+.navin{max-width:920px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap}
+.navlinks a{color:var(--ink-2);text-decoration:none;font-size:.92rem}
+.navlinks a:hover{color:var(--blue)}
+h1{font-size:1.7rem;margin:28px 0 8px;letter-spacing:-0.01em}
+h2{font-size:1.25rem;margin:36px 0 6px}
+h3{font-size:1.05rem;margin:22px 0 6px}
+.sub{color:var(--ink-2);margin:0 0 24px}
+a{color:var(--blue)}
+.note{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--ink-2);margin:16px 0}
+.note b{color:var(--ink)}
+.grid-ruote{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.card h3{margin:0 0 10px;font-size:1.05rem}
+.card .meta{font-size:.78rem;color:var(--muted);margin-bottom:10px}
+.numlist{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--surface);border:1px solid var(--border);font-size:.85rem;font-weight:600}
+.numlist.freq .num{background:rgba(42,120,214,.10);border-color:rgba(42,120,214,.25)}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid)}
+th{color:var(--muted);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.02em}
+td.tnum,th.tnum{text-align:right;font-variant-numeric:tabular-nums}
+.conclusion{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:10px;padding:16px 20px;margin:16px 0}
+footer{margin-top:50px;padding-top:16px;border-top:1px solid var(--grid);font-size:.78rem;color:var(--muted)}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 16px 8px;margin:14px 0}
+.legend{display:flex;gap:16px;font-size:.8rem;color:var(--ink-2);margin-bottom:4px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.swatch{width:10px;height:10px;border-radius:2px;display:inline-block}
+</style>
+</head>
+<body>
+
+<nav><div class="navin">
+  <a class="brand" href="index.html">Numeri<span>Onesti</span></a>
+  <div class="navlinks">
+    <a href="index.html">Ritardi e frequenze</a>
+    <a href="perche-non-funzionano.html">Perché i sistemi non funzionano</a>
+    <a href="metodologia.html">Metodologia</a>
+    <a href="gioco-responsabile.html">Gioco responsabile</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+
+<h1>Privacy</h1>
+<p class="sub">Ultimo aggiornamento: generato automaticamente.</p>
+<p>Questo sito è statico e non richiede registrazione. Se sono presenti spazi pubblicitari (Google AdSense),
+Google può utilizzare cookie per mostrare annunci pertinenti; puoi gestire le preferenze pubblicitarie su
+<a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>. Non
+raccogliamo dati personali diretti. Per richieste, contattaci tramite il repository del progetto.</p>
+
+<footer>
+  NumeriOnesti — statistiche pubbliche sul Lotto, aggiornate automaticamente ogni settimana dall'archivio ufficiale.
+  Nessun sistema qui presentato garantisce vincite: leggi <a href="perche-non-funzionano.html">perché</a>.
+  · <a href="privacy.html">Privacy</a> · <a href="cookie.html">Cookie</a> · <a href="gioco-responsabile.html">Gioco responsabile</a>
+</footer>
+</div>
+</body>
+</html>

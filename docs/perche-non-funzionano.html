@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perché i sistemi per il Lotto non funzionano — NumeriOnesti</title>
+<meta name="description" content="Analisi statistica con dati reali dal 1939 al 2026: perché ritardatari, ambi ricorrenti e sistemi non hanno valore predittivo.">
+<style>
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --card:#ffffff; --ink:#0b0b0b; --ink-2:#52514e;
+  --muted:#898781; --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+  --blue:#2a78d6; --red:#e34948; --green:#0ca30c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --card:#232322; --ink:#fff; --ink-2:#c3c2b7;
+    --muted:#898781; --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+    --blue:#3987e5; --red:#e66767; --green:#0ca30c;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 60px}
+nav{border-bottom:1px solid var(--grid);margin-bottom:8px}
+.navin{max-width:920px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap}
+.navlinks a{color:var(--ink-2);text-decoration:none;font-size:.92rem}
+.navlinks a:hover{color:var(--blue)}
+h1{font-size:1.7rem;margin:28px 0 8px;letter-spacing:-0.01em}
+h2{font-size:1.25rem;margin:36px 0 6px}
+h3{font-size:1.05rem;margin:22px 0 6px}
+.sub{color:var(--ink-2);margin:0 0 24px}
+a{color:var(--blue)}
+.note{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--ink-2);margin:16px 0}
+.note b{color:var(--ink)}
+.grid-ruote{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.card h3{margin:0 0 10px;font-size:1.05rem}
+.card .meta{font-size:.78rem;color:var(--muted);margin-bottom:10px}
+.numlist{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--surface);border:1px solid var(--border);font-size:.85rem;font-weight:600}
+.numlist.freq .num{background:rgba(42,120,214,.10);border-color:rgba(42,120,214,.25)}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid)}
+th{color:var(--muted);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.02em}
+td.tnum,th.tnum{text-align:right;font-variant-numeric:tabular-nums}
+.conclusion{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:10px;padding:16px 20px;margin:16px 0}
+footer{margin-top:50px;padding-top:16px;border-top:1px solid var(--grid);font-size:.78rem;color:var(--muted)}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 16px 8px;margin:14px 0}
+.legend{display:flex;gap:16px;font-size:.8rem;color:var(--ink-2);margin-bottom:4px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.swatch{width:10px;height:10px;border-radius:2px;display:inline-block}
+</style>
+</head>
+<body>
+
+<nav><div class="navin">
+  <a class="brand" href="index.html">Numeri<span>Onesti</span></a>
+  <div class="navlinks">
+    <a href="index.html">Ritardi e frequenze</a>
+    <a href="perche-non-funzionano.html">Perché i sistemi non funzionano</a>
+    <a href="metodologia.html">Metodologia</a>
+    <a href="gioco-responsabile.html">Gioco responsabile</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+
+<h1>Perché i sistemi per il Lotto non funzionano</h1>
+<p class="sub">Non è un'opinione: è quello che succede quando testi qualunque metodo — inclusi quelli che sembrano funzionare nello storico — sui numeri reali.</p>
+
+<h2>1. Il costo reale del biglietto</h2>
+<p>Calcolo combinatorio esatto, indipendente da qualunque dato storico — discende solo dalle regole del gioco:</p>
+<table>
+<thead><tr><th>Giocata</th><th class="tnum">Probabilità</th><th class="tnum">Moltiplicatore</th><th class="tnum">Ritorno atteso</th></tr></thead>
+<tbody>
+<tr><td>Ambata (1 numero)</td><td class="tnum">1 su 18</td><td class="tnum">11,23x</td><td class="tnum">62,4%</td></tr>
+<tr><td>Ambo (2 numeri)</td><td class="tnum">1 su 401</td><td class="tnum">250x</td><td class="tnum">62,4%</td></tr>
+<tr><td>Terno (3 numeri)</td><td class="tnum">1 su 11.748</td><td class="tnum">4.500x</td><td class="tnum" style="color:var(--red)">38,3%</td></tr>
+<tr><td>Quaterna (4 numeri)</td><td class="tnum">1 su 511.038</td><td class="tnum">120.000x</td><td class="tnum" style="color:var(--red)">23,5%</td></tr>
+<tr><td>Cinquina (5 numeri)</td><td class="tnum">1 su 43.949.268</td><td class="tnum">6.000.000x</td><td class="tnum" style="color:var(--red)">13,7%</td></tr>
+</tbody>
+</table>
+<p style="font-size:.88rem;color:var(--ink-2)">Più la giocata è "ricca", peggiore il ritorno atteso: il contrario di quello che si pensa istintivamente.</p>
+
+<h2>2. Il metodo più diffuso, testato sui numeri veri</h2>
+<p>L'idea più comune: trovare l'ambo che ha "funzionato meglio" nello storico e rigiocarlo. Su 87 anni di
+estrazioni ufficiali (1939–oggi), divisi in periodi consecutivi, abbiamo scelto ogni volta l'ambo più
+frequente in un periodo e verificato — con i dati reali — cosa succede quando lo si rigioca nel periodo
+storico immediatamente successivo, mai visto durante la scelta.</p>
+
+<div class="note">
+<b>Risultato su 55 test reali (tutte le 11 ruote, 1939–2026):</b> il 100% degli ambi selezionati era, per
+costruzione, in profitto nel periodo usato per sceglierli (+135% medio). Rigiocati nel periodo successivo:
+solo il <b>14,5%</b> è rimasto in attivo. Il resto ha reso in media <b>-38%</b>, identico a un ambo scelto
+a caso. La correlazione tra quanto un ambo sembrava buono e quanto ha reso dopo è <b>negativa</b>: più
+sembrava vincente, peggio ha fatto.
+</div>
+
+<h3>Un esempio concreto, non inventato</h3>
+<p>Ambo <b>10-19</b> su ruota Nazionale: scelto perché il più frequente tra il 20/10/2012 e il 5/07/2016
+(+244% in quel periodo) → rigiocato dal 7/07/2016 al 21/03/2020: <b style="color:var(--red)">-14%</b>.<br>
+Ambo <b>11-59</b>, stesso meccanismo, periodo successivo: <b style="color:var(--red)">-100%</b> — zero
+centri in oltre 3 anni di estrazioni reali.</p>
+
+<h2>3. E lo stop-loss? ("mi fermo dopo N tentativi a vuoto")</h2>
+<p>Anche questa idea è stata testata sui dati reali: fermarsi dopo N tentativi consecutivi senza vincita e
+sceglierne uno nuovo riduce il rischio di restare bloccati in una serie catastrofica (il ROI medio migliora
+da -45% a circa -36%). Ma è un vantaggio di <b>gestione del rischio</b>, non di previsione: scegliendo l'ambo
+successivo <b>a caso</b> invece che per frequenza, con la stessa regola di stop, il risultato è statisticamente
+identico. Il vantaggio non viene dall'aver trovato un ambo "caldo" — viene solo dal non restare incollati a
+una singola giocata sfortunata per sempre.</p>
+
+<h2>4. La scansione completa: 4.005 combinazioni, un solo verdetto</h2>
+<p>Abbiamo calcolato il risultato per <b>tutte</b> le 4.005 combinazioni di ambo possibili sulla ruota
+Nazionale. Il 76% risultava "in attivo" in un dato momento — non perché speciali, ma perché con l'8-9% circa
+di probabilità di uscire almeno una volta ogni 500-600 colpi per puro caso, la maggioranza qualsiasi coppia
+lo soddisfa. Tra le coppie che avevano superato il +200% in un periodo storico (23 casi reali osservati), solo
+il 13% è rimasto profittevole in quello successivo.</p>
+
+<h2>Conclusione</h2>
+<div class="conclusion">
+<p><b>Sia la matematica sia il test empirico sui dati reali dicono la stessa cosa:</b> nessuno schema — ritardatari,
+ambi ricorrenti, sistemi a ruota, stop-loss — mantiene un vantaggio fuori dal periodo in cui è stato scelto.
+Le serie che sembrano "vincenti" nello storico sono statistica normale su migliaia di combinazioni testate,
+non segnali. Se giochi, gioca solo ambate/ambi (il minor danno atteso), frazionati su più uscite, e considera
+la spesa persa in partenza: è il prezzo dell'intrattenimento, non un investimento.</p>
+</div>
+
+<footer>
+  NumeriOnesti — statistiche pubbliche sul Lotto, aggiornate automaticamente ogni settimana dall'archivio ufficiale.
+  Nessun sistema qui presentato garantisce vincite: leggi <a href="perche-non-funzionano.html">perché</a>.
+  · <a href="privacy.html">Privacy</a> · <a href="cookie.html">Cookie</a> · <a href="gioco-responsabile.html">Gioco responsabile</a>
+</footer>
+</div>
+</body>
+</html>

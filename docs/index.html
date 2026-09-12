@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NumeriOnesti — Ritardi e frequenze reali del Lotto</title>
+<meta name="description" content="Ritardi e frequenze aggiornati del Lotto italiano, con analisi statistica onesta su perché nessun sistema garantisce vincite.">
+<style>
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --card:#ffffff; --ink:#0b0b0b; --ink-2:#52514e;
+  --muted:#898781; --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,.10);
+  --blue:#2a78d6; --red:#e34948; --green:#0ca30c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --card:#232322; --ink:#fff; --ink-2:#c3c2b7;
+    --muted:#898781; --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,.10);
+    --blue:#3987e5; --red:#e66767; --green:#0ca30c;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px 60px}
+nav{border-bottom:1px solid var(--grid);margin-bottom:8px}
+.navin{max-width:920px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap}
+.navlinks a{color:var(--ink-2);text-decoration:none;font-size:.92rem}
+.navlinks a:hover{color:var(--blue)}
+h1{font-size:1.7rem;margin:28px 0 8px;letter-spacing:-0.01em}
+h2{font-size:1.25rem;margin:36px 0 6px}
+h3{font-size:1.05rem;margin:22px 0 6px}
+.sub{color:var(--ink-2);margin:0 0 24px}
+a{color:var(--blue)}
+.note{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--ink-2);margin:16px 0}
+.note b{color:var(--ink)}
+.grid-ruote{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.card h3{margin:0 0 10px;font-size:1.05rem}
+.card .meta{font-size:.78rem;color:var(--muted);margin-bottom:10px}
+.numlist{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--surface);border:1px solid var(--border);font-size:.85rem;font-weight:600}
+.numlist.freq .num{background:rgba(42,120,214,.10);border-color:rgba(42,120,214,.25)}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid)}
+th{color:var(--muted);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.02em}
+td.tnum,th.tnum{text-align:right;font-variant-numeric:tabular-nums}
+.conclusion{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:10px;padding:16px 20px;margin:16px 0}
+footer{margin-top:50px;padding-top:16px;border-top:1px solid var(--grid);font-size:.78rem;color:var(--muted)}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 16px 8px;margin:14px 0}
+.legend{display:flex;gap:16px;font-size:.8rem;color:var(--ink-2);margin-bottom:4px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.swatch{width:10px;height:10px;border-radius:2px;display:inline-block}
+</style>
+</head>
+<body>
+
+<nav><div class="navin">
+  <a class="brand" href="index.html">Numeri<span>Onesti</span></a>
+  <div class="navlinks">
+    <a href="index.html">Ritardi e frequenze</a>
+    <a href="perche-non-funzionano.html">Perché i sistemi non funzionano</a>
+    <a href="metodologia.html">Metodologia</a>
+    <a href="gioco-responsabile.html">Gioco responsabile</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+
+<h1>Ritardi e frequenze reali del Lotto</h1>
+<p class="sub">Dati aggiornati automaticamente dall'archivio ufficiale ogni settimana. Ultimo aggiornamento: 12/09/2026.</p>
+
+<div class="note">
+  <b>Prima di guardare i numeri:</b> ritardi e frequenze qui sotto sono fatti storici, non previsioni.
+  Ogni estrazione è indipendente dalle precedenti: un numero "ritardatario" non ha più probabilità di uscire
+  della media. Te lo spieghiamo con i dati, non a parole, nella pagina
+  <a href="perche-non-funzionano.html">perché i sistemi non funzionano</a>.
+</div>
+
+<div class="grid-ruote">
+
+<div class="card">
+  <h3>Bari</h3>
+  <div class="meta">7.377 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="67 colpi di ritardo">67</span><span class="num" title="21 colpi di ritardo">21</span><span class="num" title="12 colpi di ritardo">12</span><span class="num" title="6 colpi di ritardo">6</span><span class="num" title="28 colpi di ritardo">28</span><span class="num" title="85 colpi di ritardo">85</span><span class="num" title="7 colpi di ritardo">7</span><span class="num" title="18 colpi di ritardo">18</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="39 uscite">47</span><span class="num" title="38 uscite">37</span><span class="num" title="37 uscite">1</span><span class="num" title="36 uscite">33</span><span class="num" title="35 uscite">49</span><span class="num" title="35 uscite">52</span><span class="num" title="35 uscite">53</span><span class="num" title="34 uscite">7</span></div>
+</div>
+<div class="card">
+  <h3>Cagliari</h3>
+  <div class="meta">7.277 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="11 colpi di ritardo">11</span><span class="num" title="26 colpi di ritardo">26</span><span class="num" title="37 colpi di ritardo">37</span><span class="num" title="82 colpi di ritardo">82</span><span class="num" title="49 colpi di ritardo">49</span><span class="num" title="55 colpi di ritardo">55</span><span class="num" title="76 colpi di ritardo">76</span><span class="num" title="61 colpi di ritardo">61</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="42 uscite">31</span><span class="num" title="39 uscite">69</span><span class="num" title="36 uscite">2</span><span class="num" title="36 uscite">7</span><span class="num" title="36 uscite">59</span><span class="num" title="36 uscite">87</span><span class="num" title="36 uscite">88</span><span class="num" title="35 uscite">33</span></div>
+</div>
+<div class="card">
+  <h3>Firenze</h3>
+  <div class="meta">7.370 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="66 colpi di ritardo">66</span><span class="num" title="24 colpi di ritardo">24</span><span class="num" title="74 colpi di ritardo">74</span><span class="num" title="49 colpi di ritardo">49</span><span class="num" title="40 colpi di ritardo">40</span><span class="num" title="37 colpi di ritardo">37</span><span class="num" title="50 colpi di ritardo">50</span><span class="num" title="18 colpi di ritardo">18</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="39 uscite">1</span><span class="num" title="39 uscite">31</span><span class="num" title="39 uscite">56</span><span class="num" title="36 uscite">45</span><span class="num" title="36 uscite">71</span><span class="num" title="35 uscite">50</span><span class="num" title="35 uscite">84</span><span class="num" title="34 uscite">29</span></div>
+</div>
+<div class="card">
+  <h3>Genova</h3>
+  <div class="meta">7.349 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="21 colpi di ritardo">21</span><span class="num" title="54 colpi di ritardo">54</span><span class="num" title="27 colpi di ritardo">27</span><span class="num" title="12 colpi di ritardo">12</span><span class="num" title="72 colpi di ritardo">72</span><span class="num" title="3 colpi di ritardo">3</span><span class="num" title="56 colpi di ritardo">56</span><span class="num" title="70 colpi di ritardo">70</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="43 uscite">66</span><span class="num" title="37 uscite">17</span><span class="num" title="36 uscite">30</span><span class="num" title="36 uscite">32</span><span class="num" title="35 uscite">18</span><span class="num" title="35 uscite">27</span><span class="num" title="34 uscite">19</span><span class="num" title="34 uscite">43</span></div>
+</div>
+<div class="card">
+  <h3>Milano</h3>
+  <div class="meta">7.374 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="57 colpi di ritardo">57</span><span class="num" title="67 colpi di ritardo">67</span><span class="num" title="84 colpi di ritardo">84</span><span class="num" title="82 colpi di ritardo">82</span><span class="num" title="69 colpi di ritardo">69</span><span class="num" title="12 colpi di ritardo">12</span><span class="num" title="26 colpi di ritardo">26</span><span class="num" title="46 colpi di ritardo">46</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="42 uscite">70</span><span class="num" title="41 uscite">21</span><span class="num" title="37 uscite">19</span><span class="num" title="37 uscite">80</span><span class="num" title="37 uscite">86</span><span class="num" title="37 uscite">88</span><span class="num" title="36 uscite">85</span><span class="num" title="34 uscite">40</span></div>
+</div>
+<div class="card">
+  <h3>Napoli</h3>
+  <div class="meta">7.372 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="11 colpi di ritardo">11</span><span class="num" title="77 colpi di ritardo">77</span><span class="num" title="78 colpi di ritardo">78</span><span class="num" title="17 colpi di ritardo">17</span><span class="num" title="86 colpi di ritardo">86</span><span class="num" title="46 colpi di ritardo">46</span><span class="num" title="24 colpi di ritardo">24</span><span class="num" title="43 colpi di ritardo">43</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="42 uscite">9</span><span class="num" title="39 uscite">6</span><span class="num" title="39 uscite">11</span><span class="num" title="39 uscite">16</span><span class="num" title="37 uscite">7</span><span class="num" title="37 uscite">56</span><span class="num" title="36 uscite">12</span><span class="num" title="36 uscite">29</span></div>
+</div>
+<div class="card">
+  <h3>Palermo</h3>
+  <div class="meta">7.350 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="13 colpi di ritardo">13</span><span class="num" title="68 colpi di ritardo">68</span><span class="num" title="20 colpi di ritardo">20</span><span class="num" title="26 colpi di ritardo">26</span><span class="num" title="31 colpi di ritardo">31</span><span class="num" title="16 colpi di ritardo">16</span><span class="num" title="51 colpi di ritardo">51</span><span class="num" title="74 colpi di ritardo">74</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="41 uscite">74</span><span class="num" title="40 uscite">62</span><span class="num" title="39 uscite">14</span><span class="num" title="39 uscite">66</span><span class="num" title="38 uscite">18</span><span class="num" title="38 uscite">26</span><span class="num" title="37 uscite">67</span><span class="num" title="36 uscite">25</span></div>
+</div>
+<div class="card">
+  <h3>Roma</h3>
+  <div class="meta">7.375 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="13 colpi di ritardo">13</span><span class="num" title="30 colpi di ritardo">30</span><span class="num" title="21 colpi di ritardo">21</span><span class="num" title="24 colpi di ritardo">24</span><span class="num" title="5 colpi di ritardo">5</span><span class="num" title="79 colpi di ritardo">79</span><span class="num" title="14 colpi di ritardo">14</span><span class="num" title="33 colpi di ritardo">33</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="41 uscite">23</span><span class="num" title="39 uscite">6</span><span class="num" title="38 uscite">79</span><span class="num" title="37 uscite">1</span><span class="num" title="37 uscite">5</span><span class="num" title="35 uscite">44</span><span class="num" title="35 uscite">47</span><span class="num" title="35 uscite">57</span></div>
+</div>
+<div class="card">
+  <h3>Torino</h3>
+  <div class="meta">7.373 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="25 colpi di ritardo">25</span><span class="num" title="3 colpi di ritardo">3</span><span class="num" title="8 colpi di ritardo">8</span><span class="num" title="44 colpi di ritardo">44</span><span class="num" title="81 colpi di ritardo">81</span><span class="num" title="19 colpi di ritardo">19</span><span class="num" title="87 colpi di ritardo">87</span><span class="num" title="28 colpi di ritardo">28</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="43 uscite">84</span><span class="num" title="39 uscite">15</span><span class="num" title="39 uscite">35</span><span class="num" title="38 uscite">5</span><span class="num" title="38 uscite">27</span><span class="num" title="37 uscite">78</span><span class="num" title="36 uscite">21</span><span class="num" title="36 uscite">23</span></div>
+</div>
+<div class="card">
+  <h3>Venezia</h3>
+  <div class="meta">7.374 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="31 colpi di ritardo">31</span><span class="num" title="68 colpi di ritardo">68</span><span class="num" title="67 colpi di ritardo">67</span><span class="num" title="64 colpi di ritardo">64</span><span class="num" title="86 colpi di ritardo">86</span><span class="num" title="60 colpi di ritardo">60</span><span class="num" title="55 colpi di ritardo">55</span><span class="num" title="37 colpi di ritardo">37</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="38 uscite">14</span><span class="num" title="38 uscite">19</span><span class="num" title="38 uscite">85</span><span class="num" title="36 uscite">23</span><span class="num" title="36 uscite">45</span><span class="num" title="35 uscite">7</span><span class="num" title="35 uscite">26</span><span class="num" title="34 uscite">36</span></div>
+</div>
+<div class="card">
+  <h3>Nazionale</h3>
+  <div class="meta">3.486 estrazioni · ultima: 2026/09/11</div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Numeri più ritardatari</div>
+  <div class="numlist"><span class="num" title="78 colpi di ritardo">78</span><span class="num" title="85 colpi di ritardo">85</span><span class="num" title="54 colpi di ritardo">54</span><span class="num" title="57 colpi di ritardo">57</span><span class="num" title="69 colpi di ritardo">69</span><span class="num" title="48 colpi di ritardo">48</span><span class="num" title="45 colpi di ritardo">45</span><span class="num" title="29 colpi di ritardo">29</span></div>
+  <div style="font-size:.82rem;color:var(--ink-2);margin-bottom:4px">Più usciti nelle ultime 500 estrazioni</div>
+  <div class="numlist freq"><span class="num" title="44 uscite">1</span><span class="num" title="43 uscite">67</span><span class="num" title="42 uscite">38</span><span class="num" title="40 uscite">10</span><span class="num" title="40 uscite">14</span><span class="num" title="40 uscite">32</span><span class="num" title="38 uscite">62</span><span class="num" title="38 uscite">72</span></div>
+</div>
+</div>
+
+<h2>Perché pubblichiamo questi numeri, se non servono a prevedere nulla?</h2>
+<p>Perché sono un fatto di cronaca, non un consiglio di gioco: sapere che un numero non esce da 400 colpi è
+un'informazione vera. Il problema è cosa se ne deduce. Su questo abbiamo fatto un'analisi seria, con dati
+reali dal 1939 a oggi — <a href="perche-non-funzionano.html">la trovi qui</a>.</p>
+
+<footer>
+  NumeriOnesti — statistiche pubbliche sul Lotto, aggiornate automaticamente ogni settimana dall'archivio ufficiale.
+  Nessun sistema qui presentato garantisce vincite: leggi <a href="perche-non-funzionano.html">perché</a>.
+  · <a href="privacy.html">Privacy</a> · <a href="cookie.html">Cookie</a> · <a href="gioco-responsabile.html">Gioco responsabile</a>
+</footer>
+</div>
+</body>
+</html>

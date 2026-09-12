@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+_tmp_storico/
+storico.zip
+.DS_Store
