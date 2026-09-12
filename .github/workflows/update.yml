@@ -1,0 +1,42 @@
+name: Aggiorna dati e rigenera il sito
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scarica archivio ufficiale estrazioni Lotto
+        run: |
+          curl -sS -L -o storico.zip "https://www.brightstarlottery.it/STORICO_ESTRAZIONI_LOTTO/storico.zip"
+          unzip -o storico.zip -d _tmp_storico
+          cp _tmp_storico/storico.txt data/storico.txt
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa dipendenze
+        run: pip install numpy
+
+      - name: Rigenera il sito
+        run: |
+          python3 scripts/generate.py
+          python3 scripts/generate_static_pages.py
+
+      - name: Commit e push se ci sono cambiamenti
+        run: |
+          git config user.name "numerionesti-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/storico.txt docs/
+          git diff --cached --quiet && echo "Nessun cambiamento" || (git commit -m "Aggiornamento automatico dati e sito" && git push)
